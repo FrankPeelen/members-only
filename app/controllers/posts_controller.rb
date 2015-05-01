@@ -26,9 +26,10 @@ class PostsController < ApplicationController
   def create
     if is_logged_in?
       params = post_params
-      params[:post][:user_id] = @current_user.id
-      @post = Post.new(params)
+      params[:user_id] = @current_user.id
+      @post = Post.create(params)
     end
+    redirect_to posts_path
   end
 
   # PATCH/PUT /posts/1
