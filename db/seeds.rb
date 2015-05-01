@@ -8,8 +8,8 @@
 
 User.create!(name:  "Example Example",
              email: "example@example.com",
-             password: password,
-             password_confirmation: password)
+             password: "password",
+             password_confirmation: "password")
 
 9.times do |n|
   name  = Faker::Name.name
@@ -17,6 +17,6 @@ User.create!(name:  "Example Example",
   password = "password"
   User.create!(name:  name,
                email: email,
-             	 password: password,
-             	 password_confirmation: password)
+             	 password: "password",
+               password_confirmation: "password")
 end
